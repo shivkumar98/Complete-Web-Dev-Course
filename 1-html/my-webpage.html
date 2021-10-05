@@ -11,37 +11,10 @@
     
     <body>
               
-        <h1>this is my header</h1>
-        <h2>let me add another header</h2>
-        Hi this is shiv kumars brand new html page
+        <p><a href="#below">get to the bottom of donnie darko</a> </p>
         
-        <p>this is my new paragraph</p>
-        <p>this is text without a paragraph tag</p>
-        
-         <p>Lorem ipsum dolor sit amet, <br>consectetur adipiscing elit.</p>
- 	    <p>Donec sed ex sed quam dignissim commodo.</p>
-        
-        <p> give me some <b>bold text</b></p>
-        <p> however we should use the <strong>strong tag</strong> to make things bold</p>
-        <p> let me add some <i>italics</i></p>
-        
-        <p> and <em>emphasis</em></p>
-        
-        <p> <u>underline my text</u></p>
-        <p> but really we should use the <ins>ins tag</ins> which stands for inserted</p>
-     
-        <p> here is <sup>superscript</sup> and <sub>subscript</sub><br>
-        here for <del>deletion</del></p>
-        <hr>
-        
-        <p>
-        here are my friends:
-        <ul>
-        <li>shiv</li>
-        <li>rob</li>
-        <li>shiv <strong>2</strong></li></ul></p>
     
-        <p> here is an ordered list</p>
+        <p id =""> here is an ordered list</p>
         <ol start ="12">
             <li>first item</li>
         </ol>
@@ -53,13 +26,67 @@
     
         <p>
             Lets add an image:
-            <img src ="donnie.jpg" >
+            <img src ="donnie.jpg" width = 100px length = 75px >
             
         </p>
+    
+    <form>
+        <p>
+        Username:
+        <input type = "text">
+        </p>
         
-           
+        <p>stay logged in? <input type="checkbox" checked></p>
+        
+        <p>Over 18? <input type ="radio" name = "age"></p>
+        <p>Under 18? <input type = "radio" name = "age"></p>
+        
+        <p>Favourite food:
+            <select>
+            <option>pizza</option>
+            <option selected>natcho</option>
+            <option>spaghetti</option>
+            </select></p>
+        
+        <p> <input type ="submit" value = "click here"></p>
+    </form>
+        
+        <table>
+            <thead><tr>
+                <th>column1 heading</th><th>col2 heading</th></tr></thead>
+            <tbody>
+            <tr>
+                <td>table data 1</td>
+                <td>table data 2</td>
+            </tr>
+            
+            <tr>
+                <TD>second row column 1</TD>
+                <td>second row col 2</td>
+            </tr>
+                   </tbody>
+        </table>
+        
+        <h1> Links </h1>
+        <p> Click on the below image to get to google!</p>
+        <p> <a href="https://www.google.co.uk"><img src="donnie.jpg" width =100px height=75px></a></p>
+        
+        
+        <h2>Relative links</h2>
+        <p><a href = "helloworld.html">View my hellow world site</a></p>
+        <img id="below" src="donnie.jpg">
+        
+        <h1>HTML Entities</h1>
+        
+        <p> how to show a tag within the page itself:<br>
+        &lt;a&gt;
+        </p>
         
     </body>
     
+        <h1>iFrames</h1>
+    <iframe src = "https://ecowebhosting.co.uk"></iframe>
+    <iframe src = "helloworld.html" frameborder ="0"></iframe>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/o3aAw5Gkb3k" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
     
 </html>
