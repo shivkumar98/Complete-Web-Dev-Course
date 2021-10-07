@@ -2,14 +2,40 @@
 <head>
     <title>Webpage with style</title>
     <style type="text/css">
-        p {
-            color:  aqua;
-            font-size:200%
-        }
-        h2 {color:pink}
+      
+
         .makered {color:orangered;}
         
         .Larger{ font-size: 150%;}
+        
+        #green {color:greenyellow;}
+        
+        #first-section {background-color:pink; 
+      
+        }
+        
+        #floatleft {
+            background-color: blueviolet;
+            color:lightpink;
+            width:200px;
+              position: absolute;
+           
+       
+            z-index: 2;
+            opacity:0.2;
+
+        }
+        
+        
+        #float {
+            background-color: deeppink;
+            color:orange;
+            position: relative;
+            z-index:1;
+               
+        }
+        
+        }
     </style>
     
 </head>
@@ -31,6 +57,22 @@
     
     <p class = "Larger">This pargraph should be very large</p>
     
+    <p id="green">me using id and this <span style="text-decoration: underline">should be underlined</span> by using the span tags</p>
     
+    <h2>Using floats </h2>
+    
+    <div id="floatleft">
+    This is some text to be on the left hand side.
+    </div>
+   
+    
+    <div id="float">can i use a div after a div</div>
+    
+    <div id = "clearfloa">
+    </div>
+    
+    <p> my new paragraph under float</p>
+    
+  
     </body>
 </html>
