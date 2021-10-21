@@ -1,0 +1,35 @@
+<html>
+<head>
+    <title>Javascript</title>
+</head>
+<body>
+    <button onclick="alert('Wait! Don\'t hurt me')">Click Here</button>
+    <p id="text">HEllo world</p>
+    <button id="myButton">Click here to change the text</button>
+
+    <p id="java">Javascript is...</p>
+
+    <button id="secondbutton">Click here to give answer</button>
+
+    <p id ="emptypara"></p>
+
+    <button id="emptybutton">Click here to populate above</button>
+
+    <script type ="text/javascript">
+    alert('We have begun');
+   
+    
+    document.getElementById("myButton").onclick = function() {
+        document.getElementById("text").innerHTML = "Hello Shiv";
+    }
+
+    document.getElementById("secondbutton").onclick = function() {
+        document.getElementById("java").append(" awful lol");
+    }
+
+  
+
+    </script>
+
+</body>
+</html>

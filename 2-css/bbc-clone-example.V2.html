@@ -1,163 +1,8 @@
 <html>
 
     <head>
-        <style type = "text/css">
-            #topbar {
-                
-                width:1000px;
-                margin: 0 auto;
-                background-color: white;
-                height:40px;
-                margin-top:0
-            }
-        
-            body {
-                margin:0;
-                padding:0;
-                font-family: sans-serif, serif
-            }
-            
-            #logo {
-                margin-top: 10px;
-                width: 80px;
-                float:left;
-                margin-left: 8px;
-            }
-            
-            .topbar-section {
-                float:left;
-                border-left: 1px #cccccc solid;
-                height:100%;
-                margin-left:8px;
-            }
-            
-            #signinlogo {
-                height:60%;
-                padding-top: 4px
-            }
-            
-            #signin-div {
-                padding-left: 8px;
-                padding-top:10px;
-                    height:30px;
-                float:left;
-                padding-right: 20px;
-            }
-            
-            #signintext {
-                font-weight: bold;
-                position: relative;
-                left:10px;
-                bottom:2px;
-            }
-        
-            #wigglyline {
-                height:100%;
-                width:10px;
-            }
-            
-            #belldiv {
-                float:left;
-                width: 40px
-                
-               
-            }
-            
-            #notif {
-                width:20px;
-                 margin-bottom: 5px;
-            }
-            
-            .general-tab {
-                padding-top:14px;
-                padding-left: 8px;
-                font-weight: bold;
-                height:26px
-                
-            }
-            .final-tab{
-                padding-top:14px;
-                padding-left: 8px;
-                height:26px;
-                
-                font-weight: bold;
-                padding-right: 40px;
-            }
-            
-         
-            #searchbox {
-                padding-top: 10px;
-                padding-left: 5px;
-                height: 30px;
-                float: left;
-
-                
-            }
-            
-            #search {
-                background-color: lightgray;
-                float: left;
-                
-            }
-            
-            #searchicon {
-                width:13%;
-                float: left;
-            }
-            
-            .clear {
-                clear:both;
-            }
-            
-            #menubar-container {
-                background-color: #BB1919;
-                width:100%;
-                height:70px;
-                margin-top: 0;
-                position: relative;
-                bottom: 4px
-            }
-            
-            #menubar {
-                 width:1000px;
-                margin: 0 auto;
-               
-                height:40px;
-                margin-top:0;
-                padding-top: 0;
-
-                
-               
-               
-            }
-            
-            h1 {
-                margin:0;
-                font-size: 40px;
-                padding-top:14px;
-                padding-left: 10px;
-                float:left;
-                color:white;
-
-            }
-            
-            #localnews {
-                  width:1000px;
-                margin: 0 auto;
-                color:white;
-                
-              
-                position: relative;
-                margin-left:  700px;
-                padding-top:4px
-            
-               
-                
-            
-                
-            }
-            
-        </style>
+        <title>BBC News Technology</title>
+        <link rel="stylesheet" type="text/css" href="bbc.css"
     
     
     </head>
@@ -221,11 +66,45 @@
             <h1>NEWS</h1>
                 
                    <div id="localnews">
-                       <h2>Find local news</h2>
+                       <span id="findlocalnews">Find local news</span>
             
                     </div>
                
                     
+            </div>
+
+            <div class="clear"></div>
+
+            <div id="menubar2-container">
+
+                <div id="menubar2">
+
+                    <a href="">Home</a>
+
+                    <a href="">UK</a>
+
+                    <a href="">Tech</a>
+
+                    <a href="">Business</a>
+
+                    <a href="">Science</a>
+
+                    <a href="">Education</a>
+
+                    <a href="">Health</a>
+
+                    <a href="">Politics</a>
+
+                    <a href="">Entertainment & Arts</a>
+
+                    <a href="">Video and Audio</a>
+
+                    <a id="more1" href="">More</a>
+
+                </div>
+
+
+
             </div>
             
          
@@ -233,6 +112,68 @@
          
     
         </div>
+
+        <div class="clear"></div>
+
+        <div id="pagecontainer">
+            <h3 id="WatchListenTitle">Watch/Listen</h3>
+
+           
+
+            <div id="mainarticle">
+                <h2 style="float:left">Technology</h2>
+            
+                <h3><a href="" >Adsa bug exposed payment details</a></h3>
+
+              
+                <div id="article-container">
+
+                    <div id="article-summary">
+                        Security vulnerabilities that put customer payment information at eisk have been affected by Asda's website
+
+                        <p style="font-size:12pt; position: relative; top:-5px;">🕒 19 Jan 2016 | Technology</p>
+
+                        <hr id="article-hr" align="left">
+
+                        <p><a id="topic-link" href="">Surveillence firm hit in hack attack</a></p>
+
+                        <p><a id="topic-link" href="">eBay flaw has existed for months</a></p>
+                    </div>
+
+                    <img id="Asda" src="Asda.png">
+
+                </div>
+
+        </div>
+
+        <div id="clear"></div>
+
+        <div class="WatchListen">
+                <img class="watchlistenimage" src="covid.jpg">
+                  <div class="watchlistentext">
+                    <h4>Covid test lab suspended over wrong results</h4>
+                    <div class="time"> 🕒 21m </div>
+                    <div class="sector"> Health</div>
+
+                 </div>
+
+                 <img class="watchlistenimage" src="covid.jpg">
+                  <div class="watchlistentext1">
+                    <h4>Covid test lab suspended over wrong results</h4>
+                    <div class="time"> 🕒 21m </div>
+                    <div class="sector"> Health</div>
+
+                 </div>
+        </div>
+
+        <div class="clear"></div>
+
+        </div>
+
+       
+
+
+        </div>  
         
        
     
