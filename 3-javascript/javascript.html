@@ -1,35 +1,23 @@
+
 <html>
-<head>
-    <title>Javascript</title>
-</head>
-<body>
-    <button onclick="alert('Wait! Don\'t hurt me')">Click Here</button>
-    <p id="text">HEllo world</p>
-    <button id="myButton">Click here to change the text</button>
+	<head>
+    	<title>For Loops</title>
+    </head>
+    <body>
+        <div id="tweetDiv">  </div>
+          <script type="text/javascript">
+          var tweetString = "";
+          var tweets = ['Hello','second tweet', 'third tweet'];
+          
+          var i=0
+            while (i<tweets.length) 
+          {
+              tweetString = tweetString + "<p>" + tweets[i] + "</p>";
+              i++;
+          }
 
-    <p id="java">Javascript is...</p>
-
-    <button id="secondbutton">Click here to give answer</button>
-
-    <p id ="emptypara"></p>
-
-    <button id="emptybutton">Click here to populate above</button>
-
-    <script type ="text/javascript">
-    alert('We have begun');
-   
-    
-    document.getElementById("myButton").onclick = function() {
-        document.getElementById("text").innerHTML = "Hello Shiv";
-    }
-
-    document.getElementById("secondbutton").onclick = function() {
-        document.getElementById("java").append(" awful lol");
-    }
-
-  
-
-    </script>
-
-</body>
+          document.getElementById("tweetDiv").innerHTML = tweetString;
+            
+      	</script>
+    </body>
 </html>

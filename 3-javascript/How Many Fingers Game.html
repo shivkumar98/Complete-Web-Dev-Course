@@ -1,0 +1,43 @@
+<html>
+
+    <head>
+        <title>How Many Figures Game</title>
+    </head>
+    <body>
+
+        <p>How Many fingers am i holding up?</p>
+        <p><input id="guess" type="text">
+            <button id="enter"> Enter</button>
+        </p>
+        <p id="result"></p>
+
+
+    <script type="text/javascript">
+   
+  
+
+    document.getElementById("enter").onclick = function() {
+        min = Math.ceil(0);
+    max = Math.floor(5);
+    var x= Math.floor(Math.random() *6); 
+        if (x == document.getElementById("guess").value)
+        {
+            document.getElementById("result").innerHTML = "Yes, you were right! The number of fingers I was holding was "+x
+        }
+        else
+        {
+            if (x==1){
+                document.getElementById("result").innerHTML = "Nope! I was holding " + x+ " finger"
+            }
+            else{
+            document.getElementById("result").innerHTML = "Nope! I was holding " + x+ " fingers"
+            }
+        }
+    }
+
+        
+    </script>
+
+    </body>
+
+</html>

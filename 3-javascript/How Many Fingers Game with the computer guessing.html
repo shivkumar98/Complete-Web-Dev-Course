@@ -1,0 +1,58 @@
+<html>
+<head>
+
+    <title>Let me guess your number</title>
+    <style type="text/css">
+    #pagecontainer{
+        margin: 0 auto;
+        
+    }
+    body {
+        background-color: lightcyan;
+    }
+    h, p {
+        font-family: sans-serif;
+    }
+    </style>
+
+
+   
+
+
+</head>
+<body>
+
+    <h> Welcome to Shiv's Number Genie</h>
+
+    <div id="pagecontainer">
+    <p>Enter a number between 0 and 5 for me to guess</p>
+    <p><input id="luckynumber" type="text"><button  id ="enter"> Enter</button></p>
+    <p id="result"> </p>
+    </div>
+    <script type="text/javascript">
+
+    document.getElementById("enter").onclick = function myfunc() {
+        var luckynumber = document.getElementById("luckynumber").value;
+        if (luckynumber >5 || luckynumber < 0){
+            myfunc();
+        }
+        
+        var numberOfGuesses = 0;
+        var x = Math.floor(Math.random() * 6);
+
+        while (x!=luckynumber) {
+
+            x = Math.floor(Math.random() * 6);
+            numberOfGuesses = numberOfGuesses + 1;
+
+            
+        }
+        document.getElementById("result").innerHTML = "the number you guessed was "+luckynumber+"! It took this many guesses: "+numberOfGuesses
+    }
+    
+    </script>
+
+</body>
+
+
+</html>
