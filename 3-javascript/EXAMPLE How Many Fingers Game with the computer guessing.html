@@ -1,0 +1,90 @@
+<html>
+<head>
+
+    <title>Let me guess your number</title>
+    <style type="text/css">
+    #pagecontainer{
+        margin: 0 auto;
+        
+    }
+    body {
+        background-color: lightcyan;
+    }
+    h, p {
+        font-family: sans-serif;
+    }
+    </style>
+
+
+   
+
+
+</head>
+<body>
+
+    <h> Welcome to Shiv's Number Genie</h>
+
+    <div id="pagecontainer">
+    <p>Please select a number for me to guess</p>
+    <p><select id="luckynumber" >
+        <option>0</option>
+        <option>1</option>
+        <option>2</option>
+        <option>3</option>
+        <option>4</option>
+        <option>5</option>
+        </select>
+        <button  id ="enter"> Enter</button></p>
+    <p id="result"> </p>
+    </div>
+    <script type="text/javascript">
+
+    function doAGuess(correctanswer){
+          computerGuess = Math.floor(Math.random()*6);
+
+
+            if (correctanswer == computerGuess){
+                return (true);
+            } else {
+                return (false);
+            }
+
+    } 
+
+    document.getElementById("enter").onclick = function myfunc() {
+
+        var myNumber = document.getElementById("luckynumber").value;
+
+        var computerGuess = Math.floor(Math.random()*6);
+
+        var numberOfGuesses = 1;
+
+        var gotIt = false;
+
+        while (gotIt == false)
+        {
+            numberOfGuesses++;
+
+            
+
+            if (doAGuess(myNumber) == true){
+                gotIt = true;
+              
+            } else {
+                gotIt = false;
+                
+            }
+
+        }
+
+        document.getElementById("result").innerHTML = "The number you guess was: " 
+        + myNumber + " and it took " + numberOfGuesses + " tries"
+
+    }   
+    
+    </script>
+
+</body>
+
+
+</html>

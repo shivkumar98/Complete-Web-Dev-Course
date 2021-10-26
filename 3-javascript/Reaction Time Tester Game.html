@@ -1,0 +1,126 @@
+<html>
+
+    <head>
+        <style type="text/css">
+            .ShapePadding {
+
+            }
+
+            #Shape {
+               height: 30px;
+               width: 30px;
+               background-color: blue;
+               visibility: hidden;
+            }
+
+            #ShapeContainer {
+                height: 1000px;
+                width: auto;
+                background-color: lightgrey;
+            }
+
+            body {
+                font-family: sans-serif;
+                background-color: lightgrey;
+            }
+        
+        </style>
+
+    </head>
+
+    <body>
+        <h1> Shiv's Reaction Time Tester</h1>
+
+        <h2> Press enter to start the game!</h2>
+
+        <button id="startBttn" type="button">Start game</button>
+
+        <p id="result"></p>
+
+
+       
+
+        <div id ="ShapeContainer">
+            <div id="Shape" class="card"></div>
+        </div>
+
+        <script type="text/javascript">
+
+
+            function selectColor(colorNum, colors){
+                if (colors < 1) colors = 1; // defaults to one color - avoid divide by zero
+                return "hsl(" + (colorNum * (360 / colors) % 360) + ",100%,50%)";
+            }
+
+           
+            function  randomisePosition(){
+                document.querySelectorAll(".card").forEach(card=>{
+                card.style.marginLeft = Math.floor(Math.random() * 1500) + "px"
+                card.style.marginTop = Math.floor(Math.random() * 500) + "px"
+                var widthHeight = Math.floor(Math.random() * 500)+ "px"
+                card.style.width = widthHeight;
+                card.style.height = widthHeight;
+                var color = selectColor(Math.floor(Math.random() * 10), 10);
+                card.style.backgroundColor = color;
+                })
+            }
+
+            function randomiseShape()
+            {
+                if ((Math.floor(Math.random()*2)+1) ==1){
+                    document.querySelectorAll(".card").forEach(card=>{
+                card.style.borderRadius = "100%";
+                }
+                )
+                } else
+                {
+                    document.querySelectorAll(".card").forEach(card=>{
+                card.style.borderRadius = "0%";
+                })
+                }
+                
+            }
+            
+            function sleep(ms) {
+  return new Promise(resolve => setTimeout(resolve, ms));
+}
+
+           
+
+       
+  
+     
+
+            document.getElementById("startBttn").onclick =  function myfunc() {
+
+              
+                randomisePosition();
+                randomiseShape();
+                document.getElementById("Shape").style.visibility = "visible";
+                var startTime = performance.now();
+                
+
+                document.getElementById("Shape").onclick = function() {
+                    var endTime = performance.now()
+                   
+                    var seconds =  Math.round((endTime - startTime  ),1)/1000;
+                    document.getElementById("Shape").style.visibility = "hidden";
+                    document.getElementById("result").innerHTML = "It took you "+ seconds + " seconds"
+                   
+                    var delayInMilliseconds = Math.floor(Math.random()*3000); //1 second
+
+                setTimeout(function() {
+                    
+                    myfunc();
+                        }, delayInMilliseconds);
+                                
+                            
+                            }
+
+                        }
+        
+        </script>
+
+    </body>
+
+</html>

@@ -1,0 +1,154 @@
+<html>
+<head>
+    <title>Webpage with style</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Explora&display=swap" rel="stylesheet"> 
+    <style type="text/css">
+      
+
+        .makered {color:orangered;}
+        
+        .Larger{ font-size: 150%;}
+        
+        #green {color:greenyellow;}
+        
+        #first-section {background-color:pink; 
+      
+        }
+        
+        #floatleft {
+            background-color: blueviolet;
+            color:lightpink;
+            width:200px;
+              position: absolute;
+           
+       
+            z-index: 2;
+            opacity:0.2;
+            margin-left:200px;
+
+        }
+        
+        
+        #float {
+            background-color: deeppink;
+            color:orange;
+            position: relative;
+            z-index:1;
+            margin: 50px 100px 50px 100px;
+            padding: 100px 100px 100px 100px;
+               
+        }
+        
+        #red {  background-color:red; border: 10px orange solid
+                }
+        #blue { background-color:blue;
+                border-style: dashed solid groove   ridge;
+                border-width:5px;
+                border-color: orangered olive magenta mediumseagreen;
+            border-radius: 120%;
+            
+                }
+        
+        #green {background-color:green;
+                }
+        
+        .square {
+            width:100px;
+            height:100px;
+            margin:40px;
+            float:left;
+        }
+        
+        #end-float {
+          clear:left;
+          clear:left;
+        }
+        
+        .bold {
+            font-weight:bolder;
+        }
+        .italic {font-style: italic;}
+        
+        .underlined {
+            text-decoration: underline;
+        }
+        
+        a{ text-decoration: none;}
+        
+        a:hover {
+      
+            text-decoration: underline;
+        }
+        
+        .huge {
+            font-size:300%;
+        }
+        a:visited {
+            color:orangered;
+        }
+        
+    </style>
+    
+</head>
+<body>
+    
+    <h1>Inline CSS</h1>
+    
+    <p style="color:red; font-size:300%">This is a paragraph with inline CSS</p>
+    
+    <h2 style="fontsize:50%; color:black">CSS is not cool</h2>
+    
+    <p>This is a normal paragraph with no inline CSS</p>
+    
+    <h2>Internal CSS is cool</h2>
+    
+    <h2> Using classes and IDs </h2>
+    
+    <p class="makered">This quickbrown fox jumped over the lazy dog</p>
+    
+    <p class = "Larger">This pargraph should be very large</p>
+    
+    <p id="green">me using id and this <span style="text-decoration: underline">should be underlined</span> by using the span tags</p>
+    
+    <h2>Using floats </h2>
+    
+    <div id="floatleft">
+    This is some text to be on the left hand side.
+    </div>
+   
+    
+    <div id="float">can i use a div after a div</div>
+    
+    <div id = "clearfloa">
+    </div>
+    
+    <p> my new paragraph under float</p>
+    
+    <div id="red" class="square">
+    </div>
+    <div id="blue" class="square">
+    </div>
+    <div id="green" class="square">
+    </div>
+    
+    <div id="end-float"></div>
+    
+    <p class="fancyfont">This is a paragraph with some fancy font.</p>
+  
+    <p class="bold">this is some text to be bold</p>
+    <p class="italic"> this is come text to be italic</p>
+    <p class="bold">now this text will be bold but this will be <span class="italic">bold AND italic</span></p>
+    </body>
+    
+    <p class="underlined">this text should be underlined</p>
+    
+    <a href="">This should be a link which does not work!</a>
+    
+    <p class="huge">This should be huge!</p>
+    
+    <H2> Lets style some links</H2>
+    
+    <a href="https://www.google.com" target="_blank">Click here for google!</a>
+</html>
