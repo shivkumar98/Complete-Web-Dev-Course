@@ -1,0 +1,172 @@
+<html>
+    <head>
+        <script src="jquery-3.6.0.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        <link href="jquery-ui/jquery-ui.css">
+        <style type="text/css">
+            body {
+                margin:0;
+                padding: 0;
+            }
+            #top-wrapper {
+                width: 100%;
+                height:30px;
+                background-color: lightcyan;
+                padding-top: 5px;
+                float: left;
+            }
+            #button-wrapper{
+                width: 15%;
+                height:25px;
+                margin: 0 auto;
+                margin-top: 2px;
+        
+        
+             
+                border-radius: 5px;
+            }
+           
+           
+            .HTML-bttn-left{
+               /** border: 1px solid;
+                border-right: 0;
+                border-bottom-left-radius: 5px;
+                border-top-left-radius: 5px;**/
+                width:25%;
+                float: left;
+            }
+            .HTML-bttn-middle{
+                /*border: 1px solid;
+                border-right: none;*/
+                width:25%;
+                float: left;
+             
+            }
+             .HTML-bttn-right{
+                /*border: 1px solid;
+                border-bottom-right-radius: 5px;
+                border-top-right-radius: 5px;*/
+                width:25%;
+                 float: left
+            }
+            
+            #HTML-code
+            {
+                width:25%;
+                background-color: lightgreen;
+                height: 100%;
+                display: none;
+                float: left;
+            }
+            
+            #CSS-code
+            {
+                width:25%;
+                background-color: lightgoldenrodyellow;
+                height: 100%;
+                display: none;
+                float: left;
+            }
+            
+            #javascript-code
+            {
+                width:25%;
+                background-color: lightpink;
+                height: 100%;
+                display: none;
+                float: left;
+            }
+            
+            #jquery-code
+            {
+                width:25%;
+                background-color: lightsalmon;
+                height: 100%;
+                display: none;
+                float: left;
+            }
+            
+            
+            
+            
+        </style>
+    </head>
+    <body>
+        
+        <div id="top-wrapper">
+            <span style="float:left;margin-left: 5px;">CodeReader</span>
+            <div id="button-wrapper">
+               <button id="htmlbttn" class="HTML-bttn-left">HTML</button>
+               <button id ="cssbttn" class="HTML-bttn-middle">CSS</button>
+               <button id="jsbttn" class="HTML-bttn-middle">Javascript</button>
+                <button id="jquerybttn" class="HTML-bttn-right">jQuery</button>
+                
+                
+                
+            </div>
+           
+        </div>
+        
+        <div id="HTML-code">
+            HTML code
+        
+        </div>
+        <div id="CSS-code">
+            CSS Code
+        </div>
+        <div id="javascript-code">
+            Javascript Code
+        </div>
+        <div id="jquery-code">
+            jQuery Code
+        </div>
+        
+        <script type="text/javascript">
+        
+            if (typeof jQuery != undefined){
+                alert("jQuery is working")
+            }
+            $("#htmlbttn").click(function() {
+                
+                if ($("#HTML-code").css("display")== "none"){
+                    $("#HTML-code").css("display", "block")
+                } else {
+                    $("#HTML-code").css("display", "none")
+                }
+                    
+            })
+            
+            $("#cssbttn").click(function() {
+                
+                if ($("#CSS-code").css("display")== "none"){
+                    $("#CSS-code").css("display", "block")
+                } else {
+                    $("#CSS-code").css("display", "none")
+                }
+                    
+            })
+            
+            $("#jsbttn").click(function() {
+                
+                if ($("#javascript-code").css("display")== "none"){
+                    $("#javascript-code").css("display", "block")
+                } else {
+                    $("#javascript-code").css("display", "none")
+                }
+                    
+            })
+            
+            $("#jquerybttn").click(function() {
+                
+                if ($("#jquery-code").css("display")== "none"){
+                    $("#jquery-code").css("display", "block")
+                } else {
+                    $("#jquery-code").css("display", "none")
+                }
+                    
+            })
+        
+        </script>
+    </body>
+
+</html>
