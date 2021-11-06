@@ -4,106 +4,60 @@
         <script src="jquery-ui/jquery-ui.js"></script>
         <link href="jquery-ui/jquery-ui.css">
         <style type="text/css">
+            
             body {
-                margin:0;
+                font-family: sans-serif;
                 padding: 0;
+                margin: 0;
+                
             }
-            #top-wrapper {
+            
+            #header {
                 width: 100%;
-                height:30px;
-                background-color: lightcyan;
-                padding-top: 5px;
-                float: left;
+                background-color: lightgray;
+                height:40px;
             }
-            #button-wrapper{
-                width: 15%;
-                height:25px;
+            
+            #logo {
+                float: left;
+                padding: 5px 0 0 5px;
+            }
+            
+            #buttonContainer {
+                width:400px;
                 margin: 0 auto;
-                margin-top: 2px;
-        
-        
-             
-                border-radius: 5px;
-            }
-           
-           
-            .HTML-bttn-left{
-               /** border: 1px solid;
-                border-right: 0;
-                border-bottom-left-radius: 5px;
-                border-top-left-radius: 5px;**/
-                width:25%;
-                float: left;
-            }
-            .HTML-bttn-middle{
-                /*border: 1px solid;
-                border-right: none;*/
-                width:25%;
-                float: left;
-             
-            }
-             .HTML-bttn-right{
-                /*border: 1px solid;
-                border-bottom-right-radius: 5px;
-                border-top-right-radius: 5px;*/
-                width:25%;
-                 float: left
-            }
-            
-            #HTML-code
-            {
-                width:25%;
-               
-                height: 100%;
-                display: none;
-                float: left;
-                margin-top: 0;
-                padding-top: 0;
-            }
-            
-            #CSS-code
-            {
-                width:25%;
-                background-color: lightgoldenrodyellow;
-                height: 100%;
-                display: none;
-                float: left;
-            }
-            
-            #javascript-code
-            {
-                width:25%;
-                background-color: lightpink;
-                height: 100%;
-                display: none;
-                float: left;
-            }
-            
-            #jquery-code
-            {
-                width:25%;
-                background-color: lightsalmon;
-                height: 100%;
-                display: none;
-                float: left;
-            }
-            
-            #htmlInputCode {
-                float: left;
-                width: 100%;
+                padding: 5 0 5 0;
+                
               
-                margin-top: 0;
-                padding-top: 0;
-                background-color: aqua            }
+            }
+            
+            .toggleButton {
+                
+                border: 1px solid grey;
+                border-right: none;
+                padding: 5px;
+                float: left;
+                
+            }
+            
+            #html {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+            
+            #output {
+                border-right: 1px solid grey;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+                
+            }
             
             .active {
-                display: block
+                background-color: #E8F2FF;
             }
             
-            #outputPanel {
-                width:98%;
-                height: 100%;
-                border:0;
+            .highlightedButton {
+                background-color: gray;
             }
             
             
@@ -111,88 +65,45 @@
     </head>
     <body>
         
-        <div id="top-wrapper">
-            <span style="float:left;margin-left: 5px;">CodeReader</span>
-            <div id="button-wrapper">
-               <button id="htmlbttn" class="HTML-bttn-left active">HTML</button>
-               <button id ="cssbttn" class="HTML-bttn-middle">CSS</button>
-               <button id="jsbttn" class="HTML-bttn-middle">Javascript</button>
-                <button id="jquerybttn" class="HTML-bttn-right active">Output</button>
-                
-                
-                
+        <div id="header">
+        
+            <div id="logo">
+            
+                CodePlayer
+            
             </div>
-           
+            
+            <div id="buttonContainer">
+            
+                <div class="toggleButton active" id="html">HTML</div>
+                
+                <div class="toggleButton" id="css">CSS</div>
+                
+                <div class="toggleButton" id = "javascript">JavaScript</div>
+                
+                <div class="toggleButton active" id="Output">Output</div>
+            
+            </div>
+        
         </div>
         
-        <div id="HTML-code">
-            <span style="float: left">HTML code</span>
-            <br>
-            <textarea id="htmlInputCode"></textarea>
-        
-        </div>
-        <div id="CSS-code">
-            CSS Code
-        </div>
-        <div id="javascript-code">
-            Javascript Code
-        </div>
-        <div id="jquery-code">
-            Output
-            <br>
-            <iframe id="outputPanel"></iframe>
-        </div>
-        
+       
         <script type="text/javascript">
         
             if (typeof jQuery != undefined){
                 alert("jQuery is working")
             }
             
+          $(".toggleButton").hover(function(){
+              $(this).addClass("highlightedButton")
+              }, function(){
+              $(this).removeClass("highlightedButton")
+            });
             
-            $("#htmlInputCode").height($(window).height());            
-
-            $("#htmlbttn").click(function() {
-                
-                if ($("#HTML-code").css("display")== "none"){
-                    $("#HTML-code").css("display", "block")
-                } else {
-                    $("#HTML-code").css("display", "none")
-                }
-                    
+            $(".toggleButton").click(function() {
+                $(this).toggleClass("active");
+                $(this).removeClass("highlightedButton");
             })
-            
-            $("#cssbttn").click(function() {
-                
-                if ($("#CSS-code").css("display")== "none"){
-                    $("#CSS-code").css("display", "block")
-                } else {
-                    $("#CSS-code").css("display", "none")
-                }
-                    
-            })
-            
-            $("#jsbttn").click(function() {
-                
-                if ($("#javascript-code").css("display")== "none"){
-                    $("#javascript-code").css("display", "block")
-                } else {
-                    $("#javascript-code").css("display", "none")
-                }
-                    
-            })
-            
-            $("#jquerybttn").click(function() {
-                
-                if ($("#jquery-code").css("display")== "none"){
-                    $("#jquery-code").css("display", "block")
-                } else {
-                    $("#jquery-code").css("display", "none")
-                }
-                    
-            })
-            
-            
             
             
             
