@@ -60,6 +60,26 @@
                 background-color: gray;
             }
             
+            #bodyContainer {
+                float: left;
+                margin: 0;
+                padding: 0;
+            }
+            
+            #htmlPanel{
+             
+                background-color: aqua;
+                resize: none;
+            }
+            
+            #outputPanel {
+                padding: 0;
+                margin: 0;
+                border: 0px;
+                background-color: yellow;
+                
+            }
+            
             
         </style>
     </head>
@@ -87,6 +107,14 @@
         
         </div>
         
+        <div id="bodyContainer">
+        
+            <textarea id = "htmlPanel" class="panel">Hello world!</textarea>
+            
+            <iframe id = "outputPanel" class="panel"></iframe>
+                
+        </div>
+        
        
         <script type="text/javascript">
         
@@ -105,6 +133,12 @@
                 $(this).removeClass("highlightedButton");
             })
             
+            $("textarea").height($(document).height()- $("#header").height()-10 );
+            
+            $("iframe").height($(document).height() - $("#header").height()-10) ;
+            $(".panel").width(($(window).width()/2)-10);
+            
+            $("#outputPanel").contents().find("html").html($("#htmlPanel").val());
             
             
             
