@@ -123,7 +123,7 @@
             
             <textarea id = "cssPanel" class="panel hidden">p { color:green; }</textarea>
             
-            <textarea id = "jsPanel" class="panel hidden">alert("hi");</textarea>
+            <textarea id = "javascriptPanel" class="panel hidden">alert("hi");</textarea>
             
             <iframe id = "outputPanel" class="panel"></iframe>
                 
@@ -141,7 +141,7 @@
             
           
             
-            iwind.eval(document.getElementById("jsPanel").innerHTML);
+            iwind.eval(document.getElementById("javascriptPanel").innerHTML);
       
           $(".toggleButton").hover(function(){
               $(this).addClass("highlightedButton")
@@ -161,7 +161,7 @@
                 var numElements = 4 -$(".hidden").length
             
             
-            $(".panel").width(($(window).width()/numElements)-10);
+                $(".panel").width(($(window).width()/numElements)-10);
             })
             
             $("textarea").height($(document).height()- $("#header").height()-10 );
