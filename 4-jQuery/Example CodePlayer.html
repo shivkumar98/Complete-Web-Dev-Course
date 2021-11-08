@@ -56,6 +56,10 @@
                 background-color: #E8F2FF;
             }
             
+            .hidden {
+                display: none;
+            }
+            
             .highlightedButton {
                 background-color: gray;
             }
@@ -64,6 +68,11 @@
                 float: left;
                 margin: 0;
                 padding: 0;
+                width: 100%;
+            }
+            
+            .panel {
+                resize: none;
             }
             
             #htmlPanel{
@@ -80,6 +89,7 @@
                 
             }
             
+         
             
         </style>
     </head>
@@ -99,9 +109,9 @@
                 
                 <div class="toggleButton" id="css">CSS</div>
                 
-                <div class="toggleButton" id = "javascript">JavaScript</div>
+                <div class="toggleButton" id = "javascript">Javascript</div>
                 
-                <div class="toggleButton active" id="Output">Output</div>
+                <div class="toggleButton active" id="output">Output</div>
             
             </div>
         
@@ -110,6 +120,10 @@
         <div id="bodyContainer">
         
             <textarea id = "htmlPanel" class="panel">Hello world!</textarea>
+            
+            <textarea id = "cssPanel" class="panel hidden">p { color:green; }</textarea>
+            
+            <textarea id = "jsPanel" class="panel hidden">alert("hi");</textarea>
             
             <iframe id = "outputPanel" class="panel"></iframe>
                 
@@ -122,23 +136,51 @@
                 alert("jQuery is working")
             }
             
+        var ifrm  = document.getElementById("outputPanel"); // your iframe
+    iwind = ifrm.contentWindow; 
+            
+          
+            
+            iwind.eval(document.getElementById("jsPanel").innerHTML);
+      
           $(".toggleButton").hover(function(){
               $(this).addClass("highlightedButton")
               }, function(){
               $(this).removeClass("highlightedButton")
+              
             });
             
             $(".toggleButton").click(function() {
                 $(this).toggleClass("active");
                 $(this).removeClass("highlightedButton");
+                
+                var panelID = "#"+ $(this).attr("id") + "Panel"
+                
+                $(panelID).toggleClass("hidden");
+
+                var numElements = 4 -$(".hidden").length
+            
+            
+            $(".panel").width(($(window).width()/numElements)-10);
             })
             
             $("textarea").height($(document).height()- $("#header").height()-10 );
             
             $("iframe").height($(document).height() - $("#header").height()-10) ;
+            
             $(".panel").width(($(window).width()/2)-10);
             
+            
+           
             $("#outputPanel").contents().find("html").html($("#htmlPanel").val());
+            
+            $("#outputPanel").contents().find("html").html("<html><head><style type = 'text/css'>"+$("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
+
+            $("textarea").on("change keyup paste", function(){
+                
+            $("#outputPanel").contents().find("html").html("<html><head><style type = 'text/css'>"+$("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
+                
+            })
             
             
             
