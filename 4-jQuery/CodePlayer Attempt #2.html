@@ -30,6 +30,7 @@
                 width:300px;
                 padding-top: 0;
                 margin-top: -25px;
+               
                 
             }
             
@@ -37,7 +38,7 @@
                 float: left;
                 border: 1px solid black;
                 padding: 5px 10px 5px 10px;
-                background-color: lightcyan;
+                background-color: powderblue;
                border-right: none;
             }
             
@@ -55,18 +56,21 @@
             
             
             .active {
-                background-color: deepskyblue;
+                background-color: lightcyan;
             }
             .highlight {
                 background-color: gainsboro; 
             }
             
             #bodyContainer {
-                background-color: pink
+                background-color: pink;
+                
+                width:100%;
             }
             
             .Panel {
-                height: 95%;
+                
+                width:35%;
                 resize: none;
                 margin-top: 0;
                 padding-top: 0;
@@ -77,7 +81,12 @@
             }
             
             #outputPanel {
-                margin: 3px;
+                
+                position: relative;
+                
+                border: 1px solid black;
+                background-color: lavender
+                
             }
             
         </style>
@@ -112,9 +121,9 @@
         
             <textarea id="htmlPanel" class="panel">Here is some intial <strong>html</strong></textarea>
             
-            <textarea id="cssPanel" class="panel hidden">here is some css</textarea>
+            <textarea id="cssPanel" class="panel hidden">body {font-color:red}</textarea>
             
-            <textarea id="javascriptPanel" class="panel hidden">here is some css</textarea>
+            <textarea id="javascriptPanel" class="panel hidden"></textarea>
             
             <iframe id="outputPanel" class="panel">here is some html</iframe>
         
@@ -129,6 +138,15 @@
           alert("jQuery is working")
         }
        
+        //Finding number of active panels
+        var activePanels = $(".active").length
+        
+        //setting height of panels
+        $(".Panel").height($(document).height()-100);
+        
+        //setting widths of panels, 2 on startup
+        $(".Panel").width(($(window).width()/activePanels)-10);
+        
         $(".toggleButton").hover(function() {
            
             $(this).addClass("highlight");
@@ -137,11 +155,24 @@
             $(this).removeClass("highlight");
         })
         
+        //clicking on a toggle button:
         $(".toggleButton").click(function(){
-             $(this).toggleClass("active");
+            $(this).toggleClass("active");
             $(this).removeClass("highlight");
+            var activePanels = $(".active").length
+             //setting widths of panels
+        $(".Panel").width(($(window).width()/activePanels)-10)
+            
+        
+            
+            //get panel id
+            var panelName = "#"+$(this).attr("id").slice(0,-6) + "Panel";
+            $(panelName).toggleClass("hidden");
             
         })
+        
+        //applying css:
+         $("#outputPanel").contents().find("head").append("<style>"+$("#cssPanel").val()+"</style>"); 
         
         //setting height of body container
         $("#bodyContainer").height($(document).height() -55);
@@ -150,14 +181,27 @@
         $(".panel").css("display","none;")
         
         //displaying html content in iframe;
-    
         $("iframe").contents().find("html").html($("#htmlPanel").val());
-        
-        //Finding number of active panels
-        var activePanels = 4 - $('.active').length
+        //update on keypress
+        $("#htmlPanel").bind("change keyup input paste",function() { 
+            // handle events here
+               $("iframe").contents().find("html").html($("#htmlPanel").val());
+        });
+     
+          $("textarea").on("change keyup paste", function(){
+                
+            $("#outputPanel").contents().find("html").html("<html><head><style type = 'text/css'>"+$("#cssPanel").val() + "</style></head><body>" + $("#htmlPanel").val() + "</body></html>");
+                
+            })
+            
+            
+    
         
         //setting widths of panels
-        $(".Panel").width(($(document).width()/activePanels)-20)
+        $(".Panel").width(($(window).width()/activePanels))
+        
+   
+        
         
 
     </script>
