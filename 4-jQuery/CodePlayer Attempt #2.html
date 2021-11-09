@@ -1,0 +1,167 @@
+<html>
+    <head>
+        <script src="jquery-3.6.0.js"></script>
+        <script src="jquery-ui/jquery-ui.js"></script>
+        <link href="jquery-ui/jquery-ui.css">
+        
+        <style type="text/css">
+            
+            body {
+                margin: 0;
+                padding: 0;
+                font-family: sans-serif;
+            }
+            
+            #topBar {
+                background-color: lightsteelblue;
+                height: 50px;
+            }
+            
+            #logo {
+                padding-top: 10px;
+                padding-left: 5px;
+                font-size: 20px;
+            }
+            
+            
+            
+            #buttonContainer {
+                margin: 0 auto;
+                width:300px;
+                padding-top: 0;
+                margin-top: -25px;
+                
+            }
+            
+            .toggleButton {
+                float: left;
+                border: 1px solid black;
+                padding: 5px 10px 5px 10px;
+                background-color: lightcyan;
+               border-right: none;
+            }
+            
+            #htmlButton {
+                border-top-left-radius: 5px;
+                border-bottom-left-radius: 5px;
+            }
+            
+            #outputButton {
+                border-right: 1px solid black;
+                border-top-right-radius: 5px;
+                border-bottom-right-radius: 5px;
+            }
+            
+            
+            
+            .active {
+                background-color: deepskyblue;
+            }
+            .highlight {
+                background-color: gainsboro; 
+            }
+            
+            #bodyContainer {
+                background-color: pink
+            }
+            
+            .Panel {
+                height: 95%;
+                resize: none;
+                margin-top: 0;
+                padding-top: 0;
+            }
+            
+            .hidden {
+                display: none;
+            }
+            
+            #outputPanel {
+                margin: 3px;
+            }
+            
+        </style>
+        
+    </head>
+    
+    <body>
+        
+        <div id="topBar">
+        
+            <div id="logo">
+            <span id="logoSpan">
+                CodePlayer V2
+            </span>
+            </div>
+            
+            <div id = "buttonContainer">
+                
+                <div id="htmlButton" class="toggleButton active">HTML</div>
+                
+                <div id="cssButton" class="toggleButton ">CSS</div>
+                
+                <div id="javascriptButton" class="toggleButton ">Javascript</div>
+                
+                <div id="outputButton" class="toggleButton active">Output</div>
+            
+            </div>
+        
+        </div>
+        
+        <div id = "bodyContainer">
+        
+            <textarea id="htmlPanel" class="panel">Here is some intial <strong>html</strong></textarea>
+            
+            <textarea id="cssPanel" class="panel hidden">here is some css</textarea>
+            
+            <textarea id="javascriptPanel" class="panel hidden">here is some css</textarea>
+            
+            <iframe id="outputPanel" class="panel">here is some html</iframe>
+        
+        </div>
+        
+      
+       
+        
+    <script type="text/javascript">
+        
+        if (typeof jQuery != undefined){
+          alert("jQuery is working")
+        }
+       
+        $(".toggleButton").hover(function() {
+           
+            $(this).addClass("highlight");
+            
+        }, function() {
+            $(this).removeClass("highlight");
+        })
+        
+        $(".toggleButton").click(function(){
+             $(this).toggleClass("active");
+            $(this).removeClass("highlight");
+            
+        })
+        
+        //setting height of body container
+        $("#bodyContainer").height($(document).height() -55);
+        
+        //displaying initial panels:
+        $(".panel").css("display","none;")
+        
+        //displaying html content in iframe;
+    
+        $("iframe").contents().find("html").html($("#htmlPanel").val());
+        
+        //Finding number of active panels
+        var activePanels = 4 - $('.active').length
+        
+        //setting widths of panels
+        $(".Panel").width(($(document).width()/activePanels)-20)
+        
+
+    </script>
+        
+    </body>
+
+</html>
