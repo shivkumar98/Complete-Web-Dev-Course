@@ -155,11 +155,131 @@
     </tr>
   </tbody>
 </table>
+          
+          <div class="jumbotron">
+  <h1 class="display-4">Hello, world!</h1>
+  <p class="lead">This is a simple hero unit, a simple jumbotron-style component for calling extra attention to featured content or information.</p>
+  <hr class="my-4">
+  <p>It uses utility classes for typography and spacing to space content out within the larger container.</p>
+  <p class="lead">
+    <a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a>
+  </p>
+</div>
+          
+     <div class="alert alert-success" role="alert">
+          <strong>Success, my boy!</strong></div>
+
+        <h5>Dismissable alerts</h5>
+          <div class="alert alert-warning alert-dismissable" role="alert">
+          This is a warning
+              <button type="button" class="close" data-dismiss="alert">
+              <span>&times;</span>
+              </button>
+          </div>
+          
+          <div class="container">
+                     <progress class="progress" value="33.33" max="100">100/3%</progress>
+          </div>
+          
+    <h5>Cards</h5>
+      <div class="row">
+          <div class="col-sm-3">
+            <div class="card">
+              
+              <div class="card-body">
+                <h4 class="card-title">This is title of first card</h4>
+                <p class="card-text">This is the text of the first card</p>
+                <a href="#" class="btn btn-primary">Button to go somewhere</a>
+                </div>
+              
+              
+              </div>
+          
+          
+          </div>
+          <div class="col-sm-3">
+              <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">This is the title of the second card</h4>
+                  <p class="card-text">This is some text for the second card</p>
+                    <a href="#" class="btn btn-secondary">This button goes somewhere else</a>
+                  </div>
+              
+              </div>
+          </div>
+          
+          <div class="col-sm-3">
+                            <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">This is the title of the third card</h4>
+                  <p class="card-text">This is some text for the third card</p>
+                    <a href="#" class="btn btn-success">This button is successful</a>
+                  </div>
+              
+              </div>
+          </div>
+          <div class="col-sm-3">
+                    <div class="card">
+                <div class="card-body">
+                  <h4 class="card-title">This is the title of the fourth card</h4>
+                  <p class="card-text">This is some text for the fourth card</p>
+                    <a href="#" class="btn btn-info">This button is informative</a>
+                  </div>
+              
+              </div>
+          </div>
+          
+          
+          
+          </div>
+          
+          <h5>modal demo</h5>
+          <!-- Button trigger modal -->
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-name="shiv">
+  Email Shiv
+</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-name="jacob">
+  Email Jacob
+</button>
+<button type="button" class="btn btn-primary" data-toggle="modal" data-target="#exampleModal" data-name="fiona">
+  Email Fiona
+</button>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Dear </h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        ...
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
 
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+          
+          
+<script type="text/javascript">
+          $('#MyModal').on('show.bs.modal', function (event) {
+  var button = $(event.relatedTarget) // Button that triggered the modal
+  var recipient = button.data('name') // Extract info from data-* attributes
+  var modal = $(this)
+  modal.find('.modal-title').text('New message to '+recipient)
+
+})</script>
   </body>
 </html>
