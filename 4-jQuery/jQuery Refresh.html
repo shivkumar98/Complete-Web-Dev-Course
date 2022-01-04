@@ -1,0 +1,42 @@
+<html>
+
+    <head>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+    <style type="text/css">
+        
+        #circle {
+            height: 50px;
+            width: 50px;
+            border-radius: 50%;
+            background-color: red;
+        }
+        
+        .square {
+            height: 50px;
+            width: 50px;
+            background-color: green;
+        }
+        
+        
+    </style>
+    
+    </head>
+
+    <body>
+        
+        <div id="circle"></div>
+        <div class="square"></div>
+      
+        <script type="text/javascript">
+        
+           $("div").click(function() {
+                $(this).css("display", "none");
+           });
+            
+        </script>
+    
+    </body>
+
+</html>
