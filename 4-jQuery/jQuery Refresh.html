@@ -26,15 +26,15 @@
 
     <body>
         
-        <div id="circle"></div>
-        <div class="square"></div>
-      
-        <script type="text/javascript">
+        <div id="circle">
         
-           $("div").click(function() {
-                $(this).css("display", "none");
-           });
-            
+        </div>
+        
+        <script type="text/javascript">
+            var regex = /is/;
+            var string = "Regex is great!";
+            var result = string.match(regex);
+            alert(result)
         </script>
     
     </body>

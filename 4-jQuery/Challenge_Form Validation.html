@@ -1,0 +1,151 @@
+<html>
+
+    <head>
+        
+    <Title>Contact Info Validation Form</Title>
+    
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+        
+    <style type="text/css">
+        
+        body {
+            font-family: sans-serif
+        }
+        
+        input {
+            border-radius: 5px;
+            border: 1px solid grey;
+            padding: 3px;
+        }
+       
+        label{
+            margin-right: 30px;
+            float: left;
+            width: 100px;
+        }
+        
+        #form {
+              margin: auto;
+              width: 400px;
+              background-color: lightcyan;
+              padding: 20px 10px 30px 10px;
+        }
+        
+        #submit {
+            margin-left: 130px;
+        }
+        
+        #errors{
+            color: red;
+            font-size: 20px;
+        }
+
+    </style>
+    
+    </head>
+
+    <body>
+        <div id="form">
+            
+            <p id="errors"></p>
+            
+            <label for="email" >Email</label>
+            <input class="input" id="email" placeholder="name@email.co.uk">
+
+            <br><br>
+
+            <label for="telephone">Telephone</label>
+            <input id="telephone" type="text" placeholder="">
+            
+            <br><br>
+            
+            <label for="password">Password</label>
+            <input id="password" type="password">
+            
+            <br><br>
+            
+            <label for="confirmPassword">Confirm password</label>
+            <input id="confirmPassword" type="password">
+            
+            <br><br>
+            
+            <input id="submit" value="Submit" type="button">
+            
+            
+        </div>
+
+        <script type="text/javascript">
+            
+            $("#submit").click(function() {
+                var phoneNumberIsValid = false; //initialisation
+                var emailIsValid = false; //initialisation
+                var passwordsMatch = false; //initialisation
+               
+                
+                var errorMessage = "" //initialising error message after click
+                $("#errors").css("color", "red");
+                
+                if (!$("#email").val() || !$("#telephone").val() || !$("#password").val() ||!$("#confirmPassword").val() ){
+                    errorMessage += "<p>The following fields have no been filled in:</p><ul>";
+                    if (!$("#email").val()){
+                    errorMessage +="<li>Email</li>";
+                    }
+                    if (!$("#telephone").val()){
+                    errorMessage += "<li>Telephone number</li>";
+                    }
+                    if (!$("#password").val()){
+                        errorMessage += "<li>Password</li>";
+                    }
+                    if (!$("#confirmPassword").val()){
+                        errorMessage += "<li>Confirm password</li>";
+                    }
+                    $("#errors").html(errorMessage); 
+                } 
+                
+                if ($("#email").val() && $("#telephone").val() && $("#password").val() 
+                   && $("#confirmPassword").val()){
+                    
+                        errorMessage = ""; 
+                        function isEmail(email) {
+                        var regex = /^([a-zA-Z0-9_.+-])+\@(([a-zA-Z0-9-])+\.)+([a-zA-Z0-9]{2,4})+$/;
+                            return regex.test(email);
+                        }
+               
+                        if (!isEmail( $("#email").val() )){
+                            errorMessage += "<p>Please enter a valid email address</p>"
+                        }
+                        else {
+                            emailIsValid = true;
+                        } 
+
+                        if ( !$.isNumeric($("#telephone").val()) ){
+                            errorMessage += "<p>Please enter a valid phone number</p>"
+                        } else {
+                            phoneNumberIsValid = true;
+                        }
+
+                        if ( $("#password").val() != $("#confirmPassword").val()){
+                            errorMessage += "<p>Please ensure passwords match</p>"
+                        } else {
+                            passwordsMatch = true;
+
+                        }
+
+                        if ((!phoneNumberIsValid || !emailIsValid || !passwordsMatch)){
+                            $("#errors").html(errorMessage); 
+                            $("#errors").css("color", "red");
+                        } else {
+
+                            $("#errors").html("<p>You're details have been successfully registered!</p>");
+                            $("#errors").css("color", "green");
+                        }
+
+                }
+
+            })
+                        
+        </script>
+    
+    </body>
+
+</html>
