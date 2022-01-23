@@ -1,18 +1,9 @@
 <?php
-
-$emailTo = "shiv_kumar.98@outlook.com";
-
-$subject = "Test email subject";
-
-$body = "I think you're great";
-
-$headers = "From: shiv_kumar.98@outlook.com";
-
-if (mail($email, $subject, $body, $headers)) {
-    echo "email successfully sent";
+$name = "joe";
+$age = 19;
+if ($name == "Shiv" || $age>17){
+	echo "you may proceed";
 } else {
-    echo "the email cannot be sent";
+	echo "access denied";
 }
-
-
 ?>
