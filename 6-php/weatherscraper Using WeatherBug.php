@@ -1,12 +1,23 @@
 <?php
+    
+    $weatherForecast = "";
 
     if ($_GET["city"]){
+        $cityName =str_replace(' ', '-', $_GET["city"]);
         
-        $forecastPage = file_get_contents("https://www.weather-forecast.com/locations/London/forecasts/latest");
-       
-        $pageArray = explode('<div class="read-more-content">', $forecastPage);
-        $secondPageArray = explode('<p class="large-loc">', $pageArray[1]);
-        $weatherForecast =  $secondPageArray[0];
+        $file = "https://www.weather-forecast.com/locations/". $cityName. "/forecasts/latest";
+        $file_headers = @get_headers($file);
+        if(!$file_headers || $file_headers[0] == 'HTTP/1.1 404 Not Found') {
+            $exists = false;
+        }
+        else {
+              $forecastPage = file_get_contents("https://www.weather-forecast.com/locations/". $cityName. "/forecasts/latest");
+        $first = explode("<span class=\"phrase\">", $forecastPage);
+        $second = explode("<p></p>", $first[1]);
+        $weatherForecast = $second[0];
+        }
+        
+      
     }
 
     
@@ -28,12 +39,12 @@
         }
         body {
             
-            
+           
         }
         .container {
             text-align: center;
             margin-top: 100px;
-            background-color: transparent;
+            background: none;
         
         }
         input {
@@ -66,6 +77,10 @@
             <?php
                 if ($weatherForecast){
                     echo "<div class=\"alert alert-success role=\"alert\">$weatherForecast";
+                } else {
+                    echo "<div class=\"alert alert-danger\" role=\"alert\">
+  Oh no! I think you made a typo. Please enter a valid city name
+</div>";
                 }
             ?>
                 
