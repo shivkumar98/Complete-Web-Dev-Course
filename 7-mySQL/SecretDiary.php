@@ -1,14 +1,10 @@
 <?php
-$servername = "127.0.0.1:3307";
-$username = "root";
-$password = "";
-$database = "test";
+    // Create connection
+    $conn = new mysqli("127.0.0.1:3307", "root", "", "test");
+    if ($conn->connect_error) {
+        die("Connection failed: " . $conn->connect_error);
+    }
 
-// Create connection
-$conn = new mysqli($servername, $username, $password, $database);
-if ($conn->connect_error) {
-    die("Connection failed: " . $conn->connect_error);
-} 
 session_start();
 
   if (array_key_exists('email', $_POST) OR array_key_exists('password', $_POST)){
